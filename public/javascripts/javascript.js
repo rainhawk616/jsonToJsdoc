@@ -24,10 +24,17 @@ $(document).ready(function () {
                 }
                 propertyName += `${property}`;
 
-                str += ` * @property {${type}} ${propertyName} - ${variable}\n`;
+
 
                 if (type === `Object`) {
-                    recursiveTyping(variable, propertyName)
+                    str += ` * @property {${type}} ${propertyName}\n`;
+                    str += recursiveTyping(variable, propertyName)
+                }
+                else if(variable) {
+                    str += ` * @property {${type}} ${propertyName} - ${variable}\n`;
+                }
+                else {
+                    str += ` * @property {${type}} ${propertyName}\n`;
                 }
             }
         }
