@@ -54,7 +54,7 @@ $(document).ready(function () {
 
         try {
             //let val = $('#json').val().replace(/\s*[^"](\w+)\s*[^"]\s*:/, `"$1":`);
-            let obj = JSON.parse(val);
+            let obj = JSON.parse($('#json').val());
 
             let str = `/**\n`
                 +` * @typedef {Object} newType\n`
