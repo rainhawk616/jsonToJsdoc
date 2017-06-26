@@ -53,7 +53,7 @@ $(document).ready(function () {
         const jsDoc = $('#jsdoc');
 
         try {
-            let val = $('#json').val().replace(/\s*[^"](\w+)\s*[^"]\s*:/, `"$1":`);
+            //let val = $('#json').val().replace(/\s*[^"](\w+)\s*[^"]\s*:/, `"$1":`);
             let obj = JSON.parse(val);
 
             let str = `/**\n`
