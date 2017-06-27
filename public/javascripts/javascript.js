@@ -30,16 +30,16 @@ $(document).ready(function () {
                     str += ` * @property {${type}} ${propertyName}\n`;
                     str += recursiveTyping(variable, propertyName)
                 }
-                else if (type === `Array`) {
+                else if (type === `Array` && variable.length > 0) {
                     const elem = variable[0];
                     const elemType = getConstructorName(elem);
 
                     str += ` * @property {${elemType}[]} ${propertyName}\n`;
                     str += recursiveTyping(elem, `${propertyName}[]`)
                 }
-                else if(variable) {
-                    str += ` * @property {${type}} ${propertyName} - ${variable}\n`;
-                }
+                // else if(variable) {
+                //     str += ` * @property {${type}} ${propertyName} - ${variable}\n`;
+                // }
                 else {
                     str += ` * @property {${type}} ${propertyName}\n`;
                 }
